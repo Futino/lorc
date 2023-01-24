@@ -9,7 +9,7 @@ use crate::lorc::generic::molecules::*;
 #[function_component]
 pub fn Header(props: &Props) -> Html {
     html! {
-        <div class="sticky top-0 z-40 flex-none w-full transition-colors duration-500 backdrop-blur bg-surface-light/5 dark:bg-surface-dark/5">
+        <div class="fixed top-0 z-40 flex-none w-full transition-colors duration-500 backdrop-blur bg-surface-light/5 dark:bg-surface-dark/5">
             <div class="py-4 mx-5 border-b border-secondary-light/10 dark:border-secondary-dark/10">
                 <div class="flex relative items-center md:px-10 lg:px-20 xl:px-40 px-auto md:px-auto">
                     <a class="flex overflow-hidden px-3" href="/">
