@@ -71,19 +71,20 @@ pub fn SeperatorIcon() -> Html {
 #[function_component]
 pub fn RightArrow() -> Html {
     html! {
-
-        <svg fill="currentColor" height="14" width="14" viewBox="0 0 64 64" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier"> <rect id="Icons" x="-320" y="-128" width="1280" height="800" style="fill:none;"></rect> <g id="Icons1" > <g id="Strike"> </g>
-            <g id="H1"> </g> <g id="H2"> </g> <g id="H3"> </g> <g id="list-ul"> </g> <g id="hamburger-1"> </g> <g id="hamburger-2"> </g> <g id="list-ol"> </g> <g id="list-task"> </g>
-            <g id="trash"> </g> <g id="vertical-menu"> </g> <g id="horizontal-menu"> </g> <g id="sidebar-2"> </g> <g id="Pen"> </g> <g id="Pen1" > </g> <g id="clock"> </g>
-            <g id="external-link"> </g> <g id="hr"> </g> <g id="info"> </g> <g id="warning"> </g> <g id="plus-circle"> </g> <g id="minus-circle"> </g>
-            <path id="caret-right" d="M45.01,32.025l-24.071,-24.071l-3.008,3.009l21.061,21.062l-21.061,21.062l3.008,3.008l24.071,-24.07Z" style="fill-rule:nonzero;"></path>
-            <g id="vue"> </g> <g id="cog"> </g> <g id="logo"> </g> <g id="radio-check"> </g> <g id="eye-slash"> </g> <g id="eye"> </g> <g id="toggle-off"> </g> <g id="shredder"> </g>
-            <g id="spinner--loading--dots-" > </g> <g id="react"> </g> <g id="check-selected"> </g> <g id="turn-off"> </g> <g id="code-block"> </g>
-            <g id="user"> </g> <g id="coffee-bean"> </g> <g id="coffee-beans"> <g id="coffee-bean1" > </g> </g> <g id="coffee-bean-filled"> </g> <g id="coffee-beans-filled"> <g id="coffee-bean2" > </g> </g>
-            <g id="clipboard"> </g> <g id="clipboard-paste"> </g> <g id="clipboard-copy"> </g> <g id="Layer1"> </g> </g> </g></svg>
-
-
+        <svg aria-hidden="true" height="6" width="6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+        </path>
+    </svg>
     }
 }
+
+#[function_component]
+pub fn LeftArrow() -> Html {
+    html! {
+        <svg aria-hidden="true" height="6" width="6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+            </path>
+        </svg>
+    }
+}
+
