@@ -3,17 +3,16 @@ use yew::{function_component, html, Html};
 mod props;
 use props::Props;
 
-mod button_options
+mod button_options;
 use button_options::ButtonOptions;
 struct Button;
 
 impl Component for Button {
-
     fn create(ctx: &Context<Self>) {
         Self
     }
 
-    fn view(&self, ctx: &Context<Self>,) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
         let onclick = ctx.props().option.onclick;
         html! {
             <button {onclick} class="inline-flex overflow-hidden relative justify-center items-center py-3 px-6 font-bold rounded-md shadow-2xl group text-primary-on-light dark:text-primary-on-dark hover:text-secondary-light dark:hover:text-secondary-dark">
@@ -23,6 +22,4 @@ impl Component for Button {
             </button>
         }
     }
-
 }
-
