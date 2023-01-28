@@ -5,5 +5,5 @@ use yew::{Children, Properties};
 pub struct Props {
     #[prop_or_default]
     pub children: Children,
-    pub option: ButtonOptions,
+    pub options: ButtonOptions,
 }
