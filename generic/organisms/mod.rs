@@ -12,3 +12,6 @@ pub use client_review_card::ClientReviewCard;
 
 mod contact_form;
 pub use contact_form::ContactForm;
+
+mod carousel;
+pub use carousel::Carousel;
