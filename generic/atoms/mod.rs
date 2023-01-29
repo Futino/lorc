@@ -1,5 +1,6 @@
 mod button;
 pub use button::button_options::ButtonOptions;
+pub use button::button_options::RouteType;
 pub use button::Button;
 
 mod theme_button;
