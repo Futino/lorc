@@ -34,9 +34,13 @@ impl ButtonOptions {
                 }),
                 route: None,
             },
-            RouteType::External(_) => ButtonOptions {
+            RouteType::External(route) => ButtonOptions {
                 onclick: Callback::from(move |_| {
-                    navigator.push(&Route::Menu);
+                    web_sys::window()
+                        .expect("no global 'window' exists.")
+                        .location()
+                        .set_href(&route)
+                        .expect("could not set URL using web_sys window.");
                     log!("Navigator to Route: /Menu");
                 }),
                 route: None,
