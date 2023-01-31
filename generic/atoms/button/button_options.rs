@@ -22,7 +22,9 @@ impl ButtonOptions {
     // Use example of route_button()
     /*
     let navigator: Navigator = _ctx.link().navigator().unwrap();
-    let go_contact_page = ButtonOptions::route_button(navigator, RouteType::)
+    let go_contact_page = ButtonOptions::route_button(navigator, RouteType::Route(Route::Contact))
+    or
+    let go_contact_page = ButtonOptions::route_button(navigator, RouteType::External("www.what.com"))
      */
 
     pub fn route_button(navigator: Navigator, route: RouteType) -> Self {
