@@ -1,18 +1,18 @@
 use gloo::console::log;
 use yew::prelude::*;
-use yew_router::{prelude::Navigator, AnyRoute};
+use yew_router::prelude::Navigator;
 
 // This dependency relies on the local project to include the Enum: Route.
 // Don't think it's a good practice but it's safe since all projects will have a route enum.
 use crate::Route;
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Clone)]
 pub enum RouteType {
     Route(Route),
     External(String),
 }
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Clone)]
 pub struct ButtonOptions {
     pub onclick: Callback<MouseEvent>,
     pub route: Option<RouteType>,
