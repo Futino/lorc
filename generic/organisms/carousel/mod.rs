@@ -61,12 +61,12 @@ impl Component for Carousel {
                 <img src={self.image_paths[self.current_image].to_owned()} class={format!("absolute objec-cover w-full {}",_ctx.props().height)}/>
                 <button onclick={on_prev} class="absolute top-1/2 left-0 flex justify-center h-full px-4 group focus:outline-none">
                     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-light/40 dark:bg-primary-dark/40 group-hover:bg-primary-light/60 dark:group-hover:bg-primary-dark/60 group-focus:ring-4 group-focus:ring-outline-light dark:group-focus:ring-outline-dark/70 group-focus:outline-none">
-                        <LeftArrow />
+                        <Icon icon={IconType::LeftArrow} height="12" width="12" color="currentColor"/>
                     </span>
                 </button>
                 <button onclick={on_next} class="absolute top-1/2 right-0 flex justify-self-end justify-center h-full px-4 group focus:outline-none">
                     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-light/40 dark:bg-primary-dark/40 group-hover:bg-primary-light/60 dark:group-hover:bg-primary-dark/60 group-focus:ring-4 group-focus:ring-outline-light dark:group-focus:ring-outline-dark/70 group-focus:outline-none">
-                        <RightArrow />
+                    <Icon icon={IconType::RightArrow} height="12" width="12" color="currentColor"/>
                     </span>
                 </button>
             </div>
