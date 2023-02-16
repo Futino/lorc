@@ -15,6 +15,10 @@ pub enum IconType {
     SeperatorIcon,
     SquareIcon,
     PhoneIcon,
+    Circle,
+    Line,
+    MouseScroll,
+    LineWithArrows,
 }
 
 #[function_component]
@@ -136,6 +140,54 @@ pub fn Icon(props: &Props) -> Html {
                     </g>
                 </svg>
                 </div>
+            }
+        }
+        IconType::Circle => {
+            let y: i32 = height.parse::<i32>().unwrap() / 2;
+            let x: i32 = width.parse::<i32>().unwrap() / 2;
+            html! {
+                <div class={class}>
+                    <svg height={height.to_string()} width={width.to_string()}>
+                        <circle  cx={x.to_string()} cy={y.to_string()} r="2" stroke-width="0" fill={color.to_string()} />
+                    </svg>
+                </div>
+
+            }
+        }
+        IconType::Line => {
+            let x: i32 = width.parse::<i32>().unwrap() / 2;
+            html! {
+                <div class={class}>
+                    <svg id="Capa_1" width={width.to_string()} height={height.to_string()} fill={color.to_string()}>
+                        <g id="SVGRepo_iconCarrier">
+                                <rect x={x.to_string()} y="0" width={width.to_string()} height={height.to_string()}/>
+                        </g>
+                    </svg>
+                </div>
+            }
+        }
+        IconType::MouseScroll => {
+            html! {
+                <div class={class}>
+                    <svg width={width.to_string()} height={height.to_string()} viewBox="0 0 24 24" fill="none" >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.344"/>
+                        <g id="SVGRepo_iconCarrier"> 
+                            <path d="M12 5L12.5303 4.46967C12.2374 4.17678 11.7626 4.17678 11.4697 4.46967L12 5ZM12 13L11.4697 13.5303C11.7626 13.8232 12.2374 13.8232 12.5303 13.5303L12 13ZM9.46967 6.46967C9.17678 6.76256 9.17678 7.23744 9.46967 7.53033C9.76256 7.82322 10.2374 7.82322 10.5303 7.53033L9.46967 6.46967ZM13.4697 7.53033C13.7626 7.82322 14.2374 7.82322 14.5303 7.53033C14.8232 7.23744 14.8232 6.76256 14.5303 6.46967L13.4697 7.53033ZM10.5303 10.4697C10.2374 10.1768 9.76256 10.1768 9.46967 10.4697C9.17678 10.7626 9.17678 11.2374 9.46967 11.5303L10.5303 10.4697ZM14.5303 11.5303C14.8232 11.2374 14.8232 10.7626 14.5303 10.4697C14.2374 10.1768 13.7626 10.1768 13.4697 10.4697L14.5303 11.5303ZM3.25 10V14H4.75V10H3.25ZM20.75 14V10H19.25V14H20.75ZM11.25 5V13H12.75V5H11.25ZM11.4697 4.46967L9.46967 6.46967L10.5303 7.53033L12.5303 5.53033L11.4697 4.46967ZM11.4697 5.53033L13.4697 7.53033L14.5303 6.46967L12.5303 4.46967L11.4697 5.53033ZM12.5303 12.4697L10.5303 10.4697L9.46967 11.5303L11.4697 13.5303L12.5303 12.4697ZM12.5303 13.5303L14.5303 11.5303L13.4697 10.4697L11.4697 12.4697L12.5303 13.5303ZM20.75 10C20.75 5.16751 16.8325 1.25 12 1.25V2.75C16.0041 2.75 19.25 5.99594 19.25 10H20.75ZM12 22.75C16.8325 22.75 20.75 18.8325 20.75 14H19.25C19.25 18.0041 16.0041 21.25 12 21.25V22.75ZM3.25 14C3.25 18.8325 7.16751 22.75 12 22.75V21.25C7.99594 21.25 4.75 18.0041 4.75 14H3.25ZM4.75 10C4.75 5.99594 7.99594 2.75 12 2.75V1.25C7.16751 1.25 3.25 5.16751 3.25 10H4.75Z" fill={color.to_string()}/> 
+                        </g>
+                    </svg>
+                </div>
+            }
+        }
+        IconType::LineWithArrows => {
+            html! {
+                <svg width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.528"/>
+                    <g id="SVGRepo_iconCarrier">
+                         <path d="M12 4V20M12 4L15.5 7.5M12 4L8.5 7.5M12 20L8.5 16.5M12 20L15.5 16.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                </svg>
             }
         }
     }
