@@ -11,9 +11,9 @@ use props::Props;
 pub fn Page(props: &Props) -> Html {
     html! {
         <div class="min-h-screen bg-gradient-to-r from-background-light to-secondary-light/5 dark:from-background-dark dark:to-secondary-dark/5">
-            <Header />
+            <PageHeader />
             {for props.children.iter()}
-            <Footer />
+            <PageFooter />
         </div>
 
     }

@@ -7,7 +7,7 @@ use crate::lorc::generic::atoms::*;
 use crate::lorc::generic::molecules::*;
 
 #[function_component]
-pub fn Footer(props: &Props) -> Html {
+pub fn PageFooter(props: &Props) -> Html {
     html! {
 
     <footer class="p-6 rounded-lg shadow border-primary-light/40 dark:border-primary-dark/40">

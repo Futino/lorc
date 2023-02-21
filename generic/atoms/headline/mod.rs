@@ -23,11 +23,11 @@ use crate::lorc::atoms::{ColorVariant, SizeVariant};
 */
 
 #[function_component()]
-pub fn Label(props: &Props) -> Html {
+pub fn Headline(props: &Props) -> Html {
     let css_size = match props.size {
-        SizeVariant::Large => "label-large".to_string(),
-        SizeVariant::Medium => "label-medium".to_string(),
-        SizeVariant::Small => "label-small".to_string(),
+        SizeVariant::Large => "headline-large".to_string(),
+        SizeVariant::Medium => "headline-medium".to_string(),
+        SizeVariant::Small => "headline-small".to_string(),
     };
 
     let css_color = props.color.as_string();

@@ -1,8 +1,8 @@
-mod header;
-pub use header::Header;
+mod page_header;
+pub use page_header::PageHeader;
 
-mod footer;
-pub use footer::Footer;
+mod page_footer;
+pub use page_footer::PageFooter;
 
 mod staff_card;
 pub use staff_card::StaffCard;
