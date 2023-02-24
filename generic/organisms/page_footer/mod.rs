@@ -15,16 +15,32 @@ pub fn PageFooter(props: &Props) -> Html {
                 <Logo style="labeled" />
             <ul class="flex flex-wrap items-center mb-6 space-x-6 text-sm  sm:mb-0 text-background-on-light dark:text-background-on-dark">
                 <li>
-                    <TextLink text="About" href="/about" />
+                    <TextLink href="/about">
+                        <Label size={SizeVariant::Medium}>
+                            {"About"}
+                        </Label>
+                    </TextLink>
                 </li>
                 <li>
-                    <TextLink text="Privacy Policy" href="#" />
+                    <TextLink href="#">
+                        <Label size={SizeVariant::Medium}>
+                            {"Privacy Policy"}
+                        </Label>
+                    </TextLink>
                 </li>
                 <li>
-                    <TextLink text="Licensing" href="#" />
+                    <TextLink href="#">
+                        <Label size={SizeVariant::Medium}>
+                            {"Licensing"}
+                        </Label>
+                    </TextLink>
                 </li>
                 <li>
-                    <TextLink text="Contact" href="/contact" />
+                    <TextLink href="/contact">
+                        <Label size={SizeVariant::Medium}>
+                            {"Contact"}
+                        </Label>
+                    </TextLink>
                 </li>
             </ul>
         </div>

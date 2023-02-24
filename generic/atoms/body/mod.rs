@@ -23,7 +23,7 @@ use crate::lorc::atoms::{ColorVariant, SizeVariant};
 */
 
 #[function_component()]
-pub fn body(props: &Props) -> Html {
+pub fn Body(props: &Props) -> Html {
     let css_size = match props.size {
         SizeVariant::Large => "body-large".to_string(),
         SizeVariant::Medium => "body-medium".to_string(),

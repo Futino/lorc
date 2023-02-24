@@ -9,9 +9,6 @@ pub use theme_button::ThemeButton;
 mod logo;
 pub use logo::Logo;
 
-mod label;
-pub use label::Label;
-
 mod text_link;
 pub use text_link::TextLink;
 
@@ -21,6 +18,18 @@ pub use svg_icons::IconType;
 
 mod display;
 pub use display::Display;
+
+mod headline;
+pub use headline::Headline;
+
+mod label;
+pub use label::Label;
+
+mod title;
+pub use title::Title;
+
+mod body;
+pub use body::Body;
 
 mod color_variant;
 pub use color_variant::ColorVariant;

@@ -21,17 +21,25 @@ pub fn PageHeader(props: &Props) -> Html {
                         <nav class="text-sm font-semibold leading-6 text-background-on-light dark:text-background-on-dark hover:text-primary-light dark:hover:text-primary-dark">
                             <ul class="flex m-auto space-x-8">
                                 <li>
-                                    <TextLink text="Home" href="/" />
+                                    <TextLink href="/">
+                                        <Label size={SizeVariant::Medium}>
+                                            {"Home"}
+                                        </Label>
+                                    </TextLink>
                                 </li>
                                 <li>
-                                    <TextLink text="Contact" href="/contact" />
+                                    <TextLink href="/contact">
+                                        <Label size={SizeVariant::Medium}>
+                                            {"Contact"}
+                                        </Label>
+                                    </TextLink>
                                 </li>
                                 <li>
-                                    <TextLink text="About Us" href="/about" />
-                                </li>
-                                <li class="border-l border-surface-variant-on-light dark:border-surface-variant-on-dark"/>
-                                <li>
-                                    <ThemeButton />
+                                    <TextLink href="/packages">
+                                        <Label size={SizeVariant::Medium}>
+                                            {"Packages"}
+                                        </Label>
+                                    </TextLink>
                                 </li>
                             </ul>
                         </nav>
