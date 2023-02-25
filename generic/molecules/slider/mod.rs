@@ -15,7 +15,7 @@ pub fn Slider(props: &Props) -> Html {
     let input_value = (*input_value_handle).clone();
 
     let on_input = {
-        log!(input_value.clone());
+        //log!(input_value.clone());
         let input_value_handle = input_value_handle.clone();
 
         Callback::from(move |e: InputEvent| {
@@ -33,7 +33,7 @@ pub fn Slider(props: &Props) -> Html {
     };
 
     // Parse min prop to u32
-    let max_number = match min.parse::<u32>() {
+    let max_value = match min.parse::<u32>() {
         Ok(num) => num,
         Err(e) => {
             println!("Error parsing input1: {:?}", e);
@@ -41,7 +41,7 @@ pub fn Slider(props: &Props) -> Html {
         }
     };
     // Parse max prop to u32
-    let min_number = match max.parse::<u32>() {
+    let min_value = match max.parse::<u32>() {
         Ok(num) => num,
         Err(e) => {
             println!("Error parsing input2: {:?}", e);
@@ -49,12 +49,30 @@ pub fn Slider(props: &Props) -> Html {
         }
     };
 
-    // Calculate middle
-    let middle: String = ((min_number + max_number) / 2).to_string();
+    // Calculate middle, used as initial text value.
+    let middle: String = ((min_value + max_value) / 2).to_string();
+
+    let current_value = match input_value.parse::<u32>() {
+        Ok(num) => num,
+        Err(e) => {
+            println!("Error parsing input2: {:?}", e);
+            69
+        }
+    };
 
     html! {
-        <>
-            <h1>
+        <div class="flex flex-row">
+
+                <input class="" oninput={on_input}
+                    id="cautious-input"
+                    type="range"
+                    value={input_value.clone()}
+                    min={min.to_owned()}
+                    max={max.to_owned()}
+                    step={step.to_owned()}
+                />
+
+                <Label>
                 {
                     if input_value == "" {
                     &middle
@@ -63,16 +81,7 @@ pub fn Slider(props: &Props) -> Html {
                     &input_value
                 }
                 }
-            </h1>
-                { "My cautious input:" }
-                <input oninput={on_input}
-                    id="cautious-input"
-                    type="range"
-                    value={input_value.clone()}
-                    min={min.to_owned()}
-                    max={max.to_owned()}
-                    step={step.to_owned()}
-                />
-        </>
+            </Label>
+        </div>
     }
 }
