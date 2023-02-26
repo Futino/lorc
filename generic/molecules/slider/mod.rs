@@ -10,15 +10,39 @@ use props::Props;
 
 #[function_component]
 pub fn Slider(props: &Props) -> Html {
-    let Props { min, max, step } = props;
+    let Props {
+        input_id,
+        label_id,
+        min,
+        max,
+        step,
+    } = props;
     let input_value_handle = use_state(String::default);
     let input_value = (*input_value_handle).clone();
 
     let on_input = {
-        //log!(input_value.clone());
+        log!("on_input: ", input_value.clone());
         let input_value_handle = input_value_handle.clone();
 
         Callback::from(move |e: InputEvent| {
+            // When events are created the target is undefined, it's only
+            // when dispatched does the target get added.
+            let target: Option<EventTarget> = e.target();
+            // Events can bubble so this listener might catch events from child
+            // elements which are not of type HtmlInputElement
+            let input = target.and_then(|t| t.dyn_into::<HtmlInputElement>().ok());
+
+            if let Some(input) = input {
+                input_value_handle.set(input.value());
+            }
+        })
+    };
+
+    let on_change = {
+        log!("on_change: ", input_value.clone());
+        let input_value_handle = input_value_handle.clone();
+
+        Callback::from(move |e: Event| {
             // When events are created the target is undefined, it's only
             // when dispatched does the target get added.
             let target: Option<EventTarget> = e.target();
@@ -63,8 +87,7 @@ pub fn Slider(props: &Props) -> Html {
     html! {
         <div class="flex flex-row">
 
-                <input class="" oninput={on_input}
-                    id="cautious-input"
+                <input class="" id={input_id.to_owned()} oninput={on_input} onchange={on_change}
                     type="range"
                     value={input_value.clone()}
                     min={min.to_owned()}
@@ -72,7 +95,7 @@ pub fn Slider(props: &Props) -> Html {
                     step={step.to_owned()}
                 />
 
-                <Label>
+                <Label id={label_id.to_owned()}>
                 {
                     if input_value == "" {
                     &middle

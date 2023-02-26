@@ -4,6 +4,8 @@ use crate::lorc::atoms::{ColorVariant, SizeVariant};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
+    #[prop_or(String::new())]
+    pub id: String,
     pub children: Children,
     #[prop_or(SizeVariant::Medium)]
     pub size: SizeVariant,
