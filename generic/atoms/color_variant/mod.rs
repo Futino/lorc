@@ -11,10 +11,14 @@ pub enum ColorVariant {
     OnBackground,
     OnSurface,
     OnSurfaceVariant,
+
+    // This is to be used if the color is provided in the class of the element.
+    // Like if a custom color wants to be used, this enum variant is used as the color so that the "as_string()" returns an empty string.
+    None,
 }
 
 impl ColorVariant {
-    pub fn as_string(&self) -> &'static str {
+    pub fn as_string(&self) -> &str {
         match self {
             ColorVariant::Primary => "text-primary-light dark:text-primary-dark",
             ColorVariant::Secondary => "text-secondary-light dark:text-secondary-dark",
@@ -27,7 +31,7 @@ impl ColorVariant {
             ColorVariant::OnSurfaceVariant => {
                 "text-surface-variant-on-light dark:text-surface-variant-on-dark"
             }
-            
+            ColorVariant::None => "",
         }
     }
 }
