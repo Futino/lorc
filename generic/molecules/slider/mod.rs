@@ -87,7 +87,7 @@ pub fn Slider(props: &Props) -> Html {
     html! {
         <div class="flex flex-row">
 
-                <input class="" id={input_id.to_owned()} oninput={on_input} onchange={on_change}
+                <input class="w-full" id={input_id.to_owned()} oninput={on_input} onchange={on_change}
                     type="range"
                     value={input_value.clone()}
                     min={min.to_owned()}

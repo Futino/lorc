@@ -33,7 +33,7 @@ pub fn Body(props: &Props) -> Html {
     let css_color = props.color.as_string();
 
     html! {
-        <div class={format!("p-6 {} {} {}",props.class, css_color, css_size)}>
+        <div class={format!("p-3 {} {} {}",props.class, css_color, css_size)}>
             {for props.children.iter()}
         </div>
     }

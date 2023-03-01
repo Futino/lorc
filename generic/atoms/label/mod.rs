@@ -33,7 +33,7 @@ pub fn Label(props: &Props) -> Html {
     let css_color = props.color.as_string();
 
     html! {
-        <div id={props.id.to_owned()} class={format!("p-6 {} {} {}",props.class, css_color, css_size)}>
+        <div id={props.id.to_owned()} class={format!("p-3 {} {} {}",props.class, css_color, css_size)}>
             {for props.children.iter()}
         </div>
     }
