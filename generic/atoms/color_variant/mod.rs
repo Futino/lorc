@@ -8,6 +8,11 @@ pub enum ColorVariant {
     OnSecondary,
     OnTertiary,
 
+    Background,
+    Surface,
+    SurfaceVariant,
+    Outline,
+
     OnBackground,
     OnSurface,
     OnSurfaceVariant,
@@ -26,11 +31,19 @@ impl ColorVariant {
             ColorVariant::OnPrimary => "text-primary-on-light dark:text-primary-on-dark",
             ColorVariant::OnSecondary => "text-secondary-on-light dark:text-secondary-on-dark",
             ColorVariant::OnTertiary => "text-tertiary-on-light dark:text-tertiary-on-dark",
+
+            ColorVariant::Background => "text-background-light dark:text-background-dark",
+            ColorVariant::Surface => "text-surface-light dark:text-surface-dark",
+            ColorVariant::SurfaceVariant => {
+                "text-surface-variant-light dark:text-surface-variant-dark"
+            }
+            ColorVariant::Outline => "text-outline-light dark:text-outline-dark",
             ColorVariant::OnBackground => "text-background-on-light dark:text-background-on-dark",
             ColorVariant::OnSurface => "text-surface-on-light dark:text-surface-on-dark",
             ColorVariant::OnSurfaceVariant => {
                 "text-surface-variant-on-light dark:text-surface-variant-on-dark"
             }
+
             ColorVariant::None => "",
         }
     }
