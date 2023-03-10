@@ -1,1 +1,0 @@
-LORC = library of reusable components
